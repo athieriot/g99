@@ -2,8 +2,8 @@ package exercise
 
 func Last(a []int) int {
 	switch {
-	case a == nil: return 0
-	case len(a) == 0: return 0
+	case a == nil: return -1
+	case len(a) == 0: return -1
 	default: return a[len(a) - 1]
 	}
 }

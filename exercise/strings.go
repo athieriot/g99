@@ -1,6 +1,9 @@
 package exercise
 
-import "strings"
+import (
+	"strings"
+	"unicode"
+)
 
 func WordCount(s string) map[string]int {
 	words := strings.Fields(s)
@@ -11,4 +14,15 @@ func WordCount(s string) map[string]int {
 	}
 
 	return data
+}
+
+func IsNotSpace(r rune) bool {
+	return !unicode.IsSpace(r)
+}
+
+func Trim(s string) string {
+	first := strings.IndexFunc(s, IsNotSpace)
+	last := strings.LastIndexFunc(s, IsNotSpace)
+
+	return s[first:last+1]
 }
